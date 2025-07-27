@@ -58,7 +58,7 @@ After modifying the configuration file, restart OpenList for changes to take eff
   "meilisearch": {
     "host": "http://localhost:7700",
     "api_key": "",
-    "index_prefix": ""
+    "index": "openlist"
   },
   "scheme": {
     "address": "0.0.0.0",
@@ -572,9 +572,9 @@ In MySQL, the `ssl_mode` parameter is used to specify the authentication mode of
 
 ```json
   "meilisearch": {
-    "host": "http://localhost:7700",    //Use `meilisearch` link, the default is the local machine
-    "api_key": "",                      //Please check the `meilisearch` documentation
-    "index_prefix": ""                  //Please check the `meilisearch` documentation
+    "host": "http://localhost:7700",    // meilisearch host, the default is the local machine
+    "api_key": "",                      // if meilisearch's authentication is enabled, this is required
+    "index": ""                         // meilisearch index uid
   },
 ```
 
@@ -587,9 +587,9 @@ In MySQL, the `ssl_mode` parameter is used to specify the authentication mode of
 
 ```json
   "meilisearch": {
-    "host": "http://localhost:7700",    //使用`meilisearch`的链接，默认使用的是本机
-    "api_key": "",                      //请查阅`meilisearch`文档
-    "index_prefix": ""                  //请查阅`meilisearch`文档
+    "host": "http://localhost:7700",    // meilisearch主机，默认使用的是本机
+    "api_key": "",                      // 如果meilisearch启用认证则必填
+    "index": ""                         // meilisearch的index uid
   },
 ```
 
@@ -735,9 +735,9 @@ Each filter acts as the following object:
 
 ```json
 {
-    "cidr": "",
-    "path": "",     // http path，If it starts with“/”, it is an absolute path; if it doesn't start with“/”, it is a relative path
-    "method": ""    // HTTP/webdav method, in uppercase
+  "cidr": "",
+  "path": "", // http path，If it starts with“/”, it is an absolute path; if it doesn't start with“/”, it is a relative path
+  "method": "" // HTTP/webdav method, in uppercase
 }
 ```
 
@@ -783,9 +783,9 @@ Take note of the startup log to confirm the load, as detailed in the source code
 
 ```json
 {
-    "cidr": "",
-    "path": "",     // http path，如果 / 开头则是绝对路径，没有 / 开头则是相对路径
-    "method": ""    // http/webdav 方法，记得大写
+  "cidr": "",
+  "path": "", // http path，如果 / 开头则是绝对路径，没有 / 开头则是相对路径
+  "method": "" // http/webdav 方法，记得大写
 }
 ```
 
